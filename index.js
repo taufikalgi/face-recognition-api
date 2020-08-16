@@ -7,7 +7,7 @@ const pg = require("knex")({
     connectString: process.env.DATABASE_URL,
     ssl: true,
   },
-  searchPath: ["knex", "smart_brain"],
+  // searchPath: ["knex", "smart_brain"],
 });
 
 // process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
