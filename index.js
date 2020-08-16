@@ -4,12 +4,12 @@ const cors = require("cors");
 const pg = require("knex")({
   client: "pg",
   connection: {
-    host: "127.0.0.1",
-    user: "YOUR_USER",
-    password: "YOUR_PASSWORD",
-    database: "YOUR_DATABASE",
+    connectString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false,
+    },
   },
-  searchPath: ["knex", "YOUR_SCHEMA"],
+  searchPath: ["knex", "smart_brain"],
 });
 
 // process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
