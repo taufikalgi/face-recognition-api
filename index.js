@@ -5,9 +5,7 @@ const pg = require("knex")({
   client: "pg",
   connection: {
     connectString: process.env.DATABASE_URL,
-    ssl: {
-      rejectUnauthorized: false,
-    },
+    ssl: true,
   },
   searchPath: ["knex", "smart_brain"],
 });

@@ -28,9 +28,9 @@ const registerHandler = (req, res, pg, bcrypt) => {
       })
       .then(trx.commit)
       .catch(trx.rollback);
-  }).catch((err) =>
-    res.status(400).json("Unable to register. Email already exists.")
-  );
+  }).catch((err) => {
+    res.status(400).json("Unable to register.");
+  });
 };
 
 module.exports = {
