@@ -32,7 +32,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send("Hi there!");
+  res.send(database.users);
 });
 
 app.post("/signin", (req, res) => signin.signinHandler(req, res, pg, bcrypt));
